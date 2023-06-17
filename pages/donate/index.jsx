@@ -36,17 +36,6 @@ const Donate = () => {
     }
   }, []);
 
-  // // Success Payment Page
-  // useEffect(() => {
-  //   if (typeof window === 'undefined') {
-  //     return;
-  //   }
-
-  //   if (window?.location.href.includes('success')) {
-  //     setIsSuccess(true);
-  //   }
-  // }, []);
-
   // Payment Request
   const goToPayment = async e => {
     e.preventDefault();
@@ -60,10 +49,13 @@ const Donate = () => {
         headers: {
           'Content-Type': 'application/json',
         },
+        redirect: 'follow',
       });
 
-      if (!response.ok) {
-        throw new Error("Couldn't send a request");
+      const data = await response.json();
+
+      if (data.url) {
+        window.location = data.url;
       }
     } catch (err) {
       console.log(err);

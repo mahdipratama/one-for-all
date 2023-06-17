@@ -34,7 +34,11 @@ const handler = async (req, res) => {
         success_url: `${req.headers.origin}/?success=true`,
         cancel_url: `${req.headers.origin}/?canceled=true`,
       });
-      res.status(303).json({ redirectUrl: session.url });
+
+      // res.status(303).json({ redirectUrl: session.url });
+      res.json({
+        url: session.url,
+      });
     } catch (err) {
       res.status(err.statusCode || 500).json(err.message);
     }
