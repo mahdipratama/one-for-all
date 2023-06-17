@@ -54,7 +54,7 @@ const Faqs = () => {
   };
 
   const handleSubmit = async e => {
-    e.preventDefault();
+    // e.preventDefault();
     setIsSubmitting(true);
 
     try {
