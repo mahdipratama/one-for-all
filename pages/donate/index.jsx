@@ -1,8 +1,13 @@
-'use client';
-
 import { useEffect, useState } from 'react';
 import Button from '@/components/Button';
 import Image from 'next/image';
+
+import { loadStripe } from '@stripe/stripe-js';
+import { useRouter } from 'next/router';
+
+// Make sure to call `loadStripe` outside of a component’s render to avoid
+// recreating the `Stripe` object on every render.
+const stripePromise = loadStripe(process.env.NEXT_PUBLIC_API_KEY);
 
 const Donate = () => {
   const [selectedValue, setSelectedValue] = useState('');
@@ -17,33 +22,51 @@ const Donate = () => {
     rangeInput.value = value;
   };
 
-  // Success Payment Page
   useEffect(() => {
-    if (typeof window === 'undefined') {
-      return;
+    // Check to see if this is a redirect back from Checkout
+    const query = new URLSearchParams(window.location.search);
+    if (query.get('success')) {
+      console.log('Order placed! You will receive an email confirmation.');
     }
 
-    if (window?.location.href.includes('success')) {
-      setIsSuccess(true);
+    if (query.get('canceled')) {
+      console.log(
+        'Order canceled -- continue to shop around and checkout when you’re ready.'
+      );
     }
   }, []);
+
+  // // Success Payment Page
+  // useEffect(() => {
+  //   if (typeof window === 'undefined') {
+  //     return;
+  //   }
+
+  //   if (window?.location.href.includes('success')) {
+  //     setIsSuccess(true);
+  //   }
+  // }, []);
 
   // Payment Request
   const goToPayment = async e => {
     e.preventDefault();
 
-    const response = await fetch('/api/checkout_sessions', {
-      method: 'POST',
-      body: JSON.stringify({
-        amount: selectedValue,
-      }),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
+    try {
+      const response = await fetch('/api/checkout_sessions', {
+        method: 'POST',
+        body: JSON.stringify({
+          amount: selectedValue,
+        }),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
 
-    if (response.formData.url) {
-      window.location = response.data.url;
+      if (!response.ok) {
+        throw new Error("Couldn't send a request");
+      }
+    } catch (err) {
+      console.log(err);
     }
   };
 

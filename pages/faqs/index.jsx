@@ -74,11 +74,9 @@ const Faqs = () => {
 
       if (!response.ok) {
         throw new Error("Couldn't send the message");
-      } else {
-        router.push('/faqs');
       }
 
-      const data = await response.json();
+      // const data = await response.json();
     } catch (error) {
       console.log(error);
     } finally {

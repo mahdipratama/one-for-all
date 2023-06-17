@@ -1,19 +1,20 @@
 import { Donation } from '@/models/Donation';
 import { connectToDB } from '@/lib/mongoose';
+import micro_cors from 'micro-cors';
 
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
-// await connectToDB();
+const handler = async (req, res) => {
+  await connectToDB();
 
-export const POST = async (req, res) => {
-  // const donation = await Donation.create({
-  //   amount,
-  // });
+  const { amount } = req.body;
+
+  const donation = await Donation.create({
+    amount,
+  });
 
   if (req.method === 'POST') {
     try {
-      const { amount } = await request.json();
-
       // Create Checkout Sessions from body params.
       const session = await stripe.checkout.sessions.create({
         line_items: [
@@ -33,7 +34,7 @@ export const POST = async (req, res) => {
         success_url: `${req.headers.origin}/?success=true`,
         cancel_url: `${req.headers.origin}/?canceled=true`,
       });
-      res.redirect(303, session.url);
+      res.status(303).json({ redirectUrl: session.url });
     } catch (err) {
       res.status(err.statusCode || 500).json(err.message);
     }
@@ -42,3 +43,5 @@ export const POST = async (req, res) => {
     res.status(405).end('Method Not Allowed');
   }
 };
+
+export default micro_cors()(handler);
