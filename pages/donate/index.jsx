@@ -11,7 +11,6 @@ const stripePromise = loadStripe(process.env.NEXT_PUBLIC_API_KEY);
 
 const Donate = () => {
   const [selectedValue, setSelectedValue] = useState('');
-  const [isSuccess, setIsSuccess] = useState(false);
 
   const handleOptionChange = e => {
     const value = e.target.value;
@@ -21,20 +20,6 @@ const Donate = () => {
     const rangeInput = document.getElementById('pi_input');
     rangeInput.value = value;
   };
-
-  useEffect(() => {
-    // Check to see if this is a redirect back from Checkout
-    const query = new URLSearchParams(window.location.search);
-    if (query.get('success')) {
-      console.log('Order placed! You will receive an email confirmation.');
-    }
-
-    if (query.get('canceled')) {
-      console.log(
-        'Order canceled -- continue to shop around and checkout when you’re ready.'
-      );
-    }
-  }, []);
 
   // Payment Request
   const goToPayment = async e => {
@@ -65,19 +50,6 @@ const Donate = () => {
   const formattedNumber = selectedValue
     ? parseInt(selectedValue).toLocaleString('en-US').replace(/,/g, '.')
     : '0';
-
-  // Success Payment Page
-  if (isSuccess) {
-    return (
-      <section className="layout h-full pt-[60px] md:pt-[130px] pb-[100px] md:pb-[120px]">
-        <div className="w-full mx-5 md:mx-8">
-          <h2 className="text-[30px] md:text-[39px] mb-[16px] font-playFair leading-tight font-bold  ">
-            Thank you for your kindness !
-          </h2>
-        </div>
-      </section>
-    );
-  }
 
   return (
     <section className="layout h-full pt-[60px] md:pt-[130px] pb-[100px] md:pb-[120px]">

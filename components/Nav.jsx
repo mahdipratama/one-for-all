@@ -4,14 +4,14 @@ const Nav = ({ activeBurger, closeMenu, setActiveBurger }) => {
   return (
     <nav className=" bg-blur backdrop-blur-sm md:py-4 fixed left-0 right-0 top-0 z-30">
       <div className="layout flex align items-center justify-between px-6 md:px-12">
-        <div>
+        <Link href={'/'}>
           <img
             width={162}
             height={33}
             src="/assets/icons/logo.png"
             alt="One for all logo"
           />
-        </div>
+        </Link>
         <div
           onClick={() => setActiveBurger(prev => !prev)}
           className="hamburger ">
