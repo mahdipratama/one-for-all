@@ -21,7 +21,7 @@ const Footer = () => {
             <h4 className="font-playFair text-white font-bold text-[16px] mb-4">
               Quick Link
             </h4>
-            <ul className="text-[#AFAFAF] font-normal text-[16px] flex flex-col gap-1">
+            <ul className="text-[#AFAFAF] font-normal text-[16px] flex flex-col gap-1 ">
               <Link href={'/'}>
                 <li>Home</li>
               </Link>

@@ -67,10 +67,6 @@ body {
   z-index: 1;
 }
 
-a {
-  @apply hover:underline hover:decoration-white;
-}
-
 .hamburger {
   @apply z-10 mr-[-13px];
 }
@@ -291,6 +287,10 @@ a {
   height: 500px;
   object-fit: cover;
   border: 14px solid var(--primary-clear);
+}
+
+.footer a:hover {
+  text-decoration: underline;
 }
 
 .footer .logo {
