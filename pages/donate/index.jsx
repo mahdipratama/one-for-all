@@ -11,6 +11,7 @@ const stripePromise = loadStripe(process.env.NEXT_PUBLIC_API_KEY);
 
 const Donate = () => {
   const [selectedValue, setSelectedValue] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleOptionChange = e => {
     const value = e.target.value;
@@ -26,6 +27,7 @@ const Donate = () => {
     e.preventDefault();
 
     try {
+      setIsLoading(true);
       const response = await fetch('/api/checkout_sessions', {
         method: 'POST',
         body: JSON.stringify({
@@ -39,11 +41,14 @@ const Donate = () => {
 
       const data = await response.json();
 
+      setIsLoading(true);
       if (data.url) {
         window.location = data.url;
       }
     } catch (err) {
       console.log(err);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -150,7 +155,7 @@ const Donate = () => {
           Your contributions: <strong>Rp. {formattedNumber}</strong>
         </p>
         <Button type="submit" primary>
-          Donate Now
+          {isLoading ? 'Loading ...' : 'Donate Now'}
         </Button>
       </form>
     </section>
