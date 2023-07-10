@@ -5,9 +5,9 @@ const Button = ({ children, primary, outline, ...rest }) => {
     rest.classNames,
     'text-sm md:text-[16px] py-[14px] md:py-[16px] px-[28px] md:px-[32px] text-white font-medium',
     {
-      'bg-primary hover:bg-white hover:border	hover:text-primary hover:transition-all':
+      'bg-primary hover:bg-white border border-primary hover:border hover:text-primary hover:transition-all':
         primary && !outline,
-      'border border-primary hover:bg-secondary hover:text-white hover:transition-all hover:border-secondary hover:font-semibold':
+      'border border-primary hover:bg-secondary hover:text-white hover:transition-all hover:border-secondary ':
         outline,
     }
   );
