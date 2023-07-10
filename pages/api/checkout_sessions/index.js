@@ -31,7 +31,7 @@ const handler = async (req, res) => {
           },
         ],
         mode: 'payment',
-        success_url: `${req.headers.origin}/?success=true`,
+        success_url: `${req.headers.origin}/donate/success`,
         cancel_url: `${req.headers.origin}/?canceled=true`,
       });
 
