@@ -118,13 +118,19 @@ const About = () => {
                   Food & Homeless Charity
                 </h3>
                 <p className="leading-tight font-light mb-[28px]">
-                  Lorem ipsum dolor sit amet, consetetur sadipscing sed diam
-                  nonumy tempor invidunt ut labore et magna aliquyam erat, sed
-                  diam voluptua.....
+                  Our organization is committed to providing nourishment and
+                  support for those facing homelessness. We offer warm meals,
+                  shelter, and essential resources to help individuals rebuild
+                  their lives. By collaborating with local communities, we
+                  strive to combat homelessness and create a brighter future for
+                  those in need.
                 </p>
                 <ol className="font-medium list-decimal ml-[20px] flex flex-col gap-3 ">
-                  <li>Join your hand with us for a better life</li>
-                  <li>Let&apos;s do the right thing now</li>
+                  <li>Providing nourishment and support for those in need.</li>
+                  <li>Warm meals, shelter, and essential resources offered.</li>
+                  <li>
+                    Collaborating with local communities to combat homelessness.
+                  </li>
                 </ol>
               </div>
             </div>
@@ -138,14 +144,18 @@ const About = () => {
                   Make a donation
                 </h3>
                 <p className="leading-tight font-light mb-[28px]">
-                  Lorem ipsum dolor sit amet, consetetur sadipscing sed diam
-                  nonumy tempor invidunt ut labore et magna aliquyam erat, sed
-                  diam voluptua.....
+                  Your contribution can make a real difference in the lives of
+                  those in need. We empower you to give and support various
+                  causes and initiatives that align with your passion. By
+                  donating, you directly impact and uplift lives, bringing hope
+                  and positive change to communities worldwide.
                 </p>
                 <ol className="font-medium list-decimal ml-[20px] flex flex-col gap-3 ">
-                  <li>Join your hand with us for a better life</li>
-                  <li>Let&apos;s do the right thing now</li>
-                  <li>Lorem ipsum dolor sit amet</li>
+                  <li>Empowering you to make a difference through giving.</li>
+                  <li>Support various causes and initiatives.</li>
+                  <li>
+                    Ensure your contribution directly impacts lives in need.
+                  </li>
                 </ol>
               </div>
             </div>
@@ -159,15 +169,16 @@ const About = () => {
                   Non profit NGO
                 </h3>
                 <p className="leading-tight font-light mb-[28px]">
-                  Lorem ipsum dolor sit amet, consetetur sadipscing sed diam
-                  nonumy tempor invidunt ut labore et magna aliquyam erat, sed
-                  diam voluptua.....
+                  Dedicated to creating sustainable change and promoting social
+                  progress. We actively engage in community development
+                  projects, working hand in hand with local partners. Our
+                  mission is to advocate for social justice, equality, and
+                  empower marginalized communities.
                 </p>
                 <ol className="font-medium list-decimal ml-[20px] flex flex-col gap-3 ">
-                  <li>Join your hand with us for a better life</li>
-                  <li>Let&apos;s do the right thing now</li>
-                  <li>Lorem ipsum dolor sit amet</li>
-                  <li> children where we are able to fulfill all</li>
+                  <li>Working together for sustainable change and progress.</li>
+                  <li>Engage in community development projects.</li>
+                  <li>Advocate for social justice and equality.</li>
                 </ol>
               </div>
             </div>
