@@ -4,41 +4,38 @@ import Image from 'next/image';
 import FaqsAccordion from '@/components/FaqsAccordion';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import axios from 'axios';
 
 import ContactForm from '@/components/ContactForm';
 
 const faqsData = [
   {
-    label: 'Make a different In life of a child',
+    label: ' How can I donate to your organization?',
     content:
-      'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.',
+      'Donating is easy! Simply visit our website and click on the "Donate" button. You can choose your preferred donation method, such as credit card or online payment platforms, and follow the simple steps to make your contribution securely.',
   },
   {
-    label: "Let's do the right thing now",
+    label: 'Is my donation tax-deductible?',
     content:
-      'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.',
+      'Yes, your donation is tax-deductible to the extent allowed by law. As a registered nonprofit organization, we provide tax receipts for all eligible donations. Please consult your local tax regulations or a financial advisor for more information on deductibility.',
   },
   {
-    label: 'Can I donate anonymously?',
+    label: 'Can I specify how my donation will be used?',
     content:
-      'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.',
+      'Absolutely! We offer the option to designate your donation to specific causes or programs within our organization. During the donation process, you can indicate your preference, and we will ensure your contribution is allocated accordingly.',
   },
   {
-    label: 'Join your hand with us for a better life',
+    label: 'How will my donation make an impact?',
     content:
-      'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.',
+      'Your donation has a direct and meaningful impact on the lives of those we serve. It enables us to provide essential resources, support vital projects, and create sustainable change. Through transparency and regular updates, we will keep you informed about the impact of your generosity.',
   },
   {
-    label: 'How do I cancel my recurring donation?',
+    label: 'Can I volunteer or get involved in other ways?',
     content:
-      'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.',
+      'Yes, we welcome volunteers and offer various opportunities to get involved. Whether it\'s volunteering your time, skills, or expertise, we appreciate your support beyond financial contributions. Please visit our "Get Involved" page to explore volunteer opportunities or reach out to our team for more information.',
   },
 ];
 
 const Faqs = () => {
-  const router = useRouter();
-
   const [submitting, setIsSubmitting] = useState(false);
 
   const [formData, setFormData] = useState({
@@ -149,6 +146,3 @@ const Faqs = () => {
 };
 
 export default Faqs;
-
-// rows="8"
-// cols="50"
