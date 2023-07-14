@@ -42,7 +42,7 @@ const Vision = () => {
                 Our Mission
               </h2>
               <p className="font-light">
-                walking alongside the homeless, hungry and hurting of Palembang
+                Walking alongside the homeless, hungry and hurting of Palembang
                 so that they may experience the love of God through acts of
                 mercy, dignity and respect
               </p>
