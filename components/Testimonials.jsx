@@ -2,7 +2,6 @@
 
 // import { useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import Image from 'next/image';
 import SliderElement from './SliderElement';
 
 // Import Swiper styles
@@ -10,7 +9,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
-import { Pagination, Navigation } from 'swiper';
+import { Autoplay, Pagination, Navigation } from 'swiper';
 
 const WhiteStrip = () => {
   return (
@@ -44,44 +43,38 @@ const Testimonials = () => {
           slidesPerView={1}
           spaceBetween={30}
           loop={true}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
           pagination={{
             clickable: true,
           }}
           navigation={true}
-          modules={[Pagination, Navigation]}
+          modules={[Autoplay, Pagination, Navigation]}
           className="mySwiper phone:!pb-[50px]">
           <SwiperSlide>
             <SliderElement
-              image="/assets/images/odon.png"
-              name="Oodoons Brandalz-Coretz"
+              image="/assets/images/andre.png"
+              name="Andre Ramadhan"
               occupation="Founder"
-              testimony=" Sea chub demoiselle whalefish zebra lionfish mud cat pelican
-              eel. Minnow snoek icefish velvet-belly shark, California
-              halibut round stingray northern sea robin. Southern grayling
-              trout-perchSharksucker sea toad candiru rocket danio tilefish
-              stingray deepwater stingray Sacramento splittail, Canthigaster
-              rostrata."
+              testimony="I cannot express enough gratitude for the exceptional work carried out by this organization. Their mission to bring positive change to communities is unparalleled. I had the privilege of witnessing their efforts firsthand and was amazed by the tangible impact they create. Through their innovative projects and unwavering determination, they empower individuals, uplift spirits, and foster a sense of hope."
             />
           </SwiperSlide>
           <SwiperSlide>
             <SliderElement
-              image="/assets/images/odon.png"
-              name="Oodoons Brandalz-Coretz"
-              occupation="Founder"
-              testimony=" Sea chub demoiselle whalefish zebra lionfish mud cat pelican
-              eel. Minnow snoek icefish velvet-belly shark, California
-              halibut round stingray northern sea robin. Southern grayling
-              trout-perchSharksucker sea toad candiru rocket danio tilefish
-              stingray deepwater stingray Sacramento splittail, Canthigaster
-              rostrata."
+              image="/assets/images/beta.png"
+              name="Betaly Nava Halmahera"
+              occupation="Member"
+              testimony="I was deeply moved by the incredible impact that this organization's work has on the lives of individuals in need. Their unwavering dedication and tireless efforts to make a difference in people's lives is truly awe-inspiring. Through their innovative programs and initiatives, they provide vital support and resources to those who need it most."
             />
           </SwiperSlide>
           <SwiperSlide>
             <SliderElement
-              image="/assets/images/odon.png"
-              name="Another Name"
-              occupation="co-founder"
-              testimony="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis minus voluptas enim cupiditate quidem? Nisi accusantium numquam voluptates iure quas sit dolores illo? Nemo qui saepe unde, ducimus hic voluptatibus illo id. Beatae provident totam fuga at. Ab sequi qui accusantium facilis alias ipsum consectetur, neque, aspernatur possimus vero laborum."
+              image="/assets/images/baki.png"
+              name="Baki Nasrullah"
+              occupation="Volunteer"
+              testimony="Supporting this charity has been an immensely rewarding experience. From the very beginning, I was captivated by their transparent approach and their unwavering commitment to achieving measurable results. Through their impactful programs, they tackle some of the most pressing issues our society faces. Witnessing the transformation they bring about in the lives of individuals is truly humbling. It is heartwarming to see how they provide not only immediate relief but also empower individuals to build a better future."
             />
           </SwiperSlide>
         </Swiper>
