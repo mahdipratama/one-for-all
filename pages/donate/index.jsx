@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { useEffect, useState } from 'react';
 import Button from '@/components/Button';
 import Image from 'next/image';
@@ -154,6 +155,20 @@ const Donate = () => {
         <p className="mb-16 text-xl">
           Your contributions: <strong>Rp. {formattedNumber}</strong>
         </p>
+        <div className="mt-6 ">
+          <p className="text-[12px] text-center mb-2">
+            use any of the{' '}
+            <a
+              href="https://stripe.com/docs/testing#cards"
+              className="text-primary">
+              Stripe test cards
+            </a>{' '}
+            for this demo, e.g.
+            <span className="inline-block text-slate-600">
+              4242 4242 4242 4242
+            </span>{' '}
+          </p>
+        </div>
         <Button type="submit" primary>
           {isLoading ? 'Loading ...' : 'Donate Now'}
         </Button>
